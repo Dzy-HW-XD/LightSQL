@@ -17,10 +17,10 @@ ExpressionDeParser method  can sequentially parse the components in WHERE clause
 override its visitor mode and get the Join condition when the corresponding VISIT function is excited.
 In my project, i override five visitor functions, visit(EqualsTo equalsTo),visit(GreaterThan greaterThan),
 visit(GreaterThanEquals greaterThanEquals),visit(MinorThanEquals minorThanEquals) and visit(MinorThan minorThan).
-
 So the idea is to determine if the right side of Expression is a Column class. If right side of expression belongs to 
 Column class, then output the whole expression and label it as join condition expression.
----------------------------------------------------------------------------
+
+```
 @Override
                     public void visit(EqualsTo equalsTo) {
                         super.visit(equalsTo);
@@ -28,20 +28,25 @@ Column class, then output the whole expression and label it as join condition ex
                             stack.push(equalsTo);
                         }
                     }
------------------------------------------------------------------------------
+```
+
 Here is the code about EqualsTo class visitor. When the right side of equalsTo is equal to Column
 class, the whole equalsTo is considered as Join Condition. 
+```
 For example, SELECT * FROM Sailors,Boats
                                      WHERE Sailors.A = Boats.E
                                      AND Sailors.A < 3
                                      AND Boats.F = 1
+```
 Expression Sailors.A = Boats.E will be pushed into stack and labelled as Join Conditon, Sailors.A < 3 and Boats.F = 1
 will be considered as Select Condition.
 
 Moreover, GreaterThan,GreaterThanEquals,MinorThanEquals,MinorThan have same principle as EqualsTo does.
+```
 For example, SELECT * FROM Sailors S,Reserves R 
 		    WHERE S.A = R.G 
 	                    AND S.B<R.H;
+```
 Expression S.A = R.G and S.B<R.H will be labelled as Join Condition in this sql case.
 
 ## Query Plan
