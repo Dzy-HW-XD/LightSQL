@@ -90,6 +90,7 @@ AND T.G < 5 AND T.G = S.H, the above approach would give the following query pla
 
 ```
 Boats
+D,E,F
 101,2,3
 102,3,4
 104,104,2
@@ -98,6 +99,7 @@ Boats
 ```
 ```
 Reserves:
+G,H
 1,101
 1,102
 1,103
@@ -108,6 +110,7 @@ Reserves:
 
 ```
 Sailors:
+A,B,C
 1,200,50
 2,200,200
 3,100,105
