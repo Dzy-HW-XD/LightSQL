@@ -86,6 +86,61 @@ AND T.G < 5 AND T.G = S.H, the above approach would give the following query pla
 	            b1: SELECT * FROM Boats WHERE Boats.D < 103 
 * Tuple() is a class that define tuple, one tuple is defined by one HashTable and One List.
 
+## Demo
+
+```
+Boats
+101,2,3
+102,3,4
+104,104,2
+103,1,1
+107,2,8
+```
+```
+Reserves:
+1,101
+1,102
+1,103
+2,101
+3,102
+4,104
+```
+
+```
+Sailors:
+1,200,50
+2,200,200
+3,100,105
+4,100,50
+5,100,500
+6,300,400
+```
+
+>>`mvn clean compile assembly:single`#Compile code and produce a runnable .jar file<br>
+```
+$ java -jar target/lightdb-1.0.0-jar-with-dependencies.jar
+Usage: LightDB database_dir input_file output_file
+```
+>>`java -jar target/lightdb-1.0.0-jar-with-dependencies.jar samples/db samples/input/query1.sql samples/output/query1.csv` read sql from samples/input/query1.sql and print results into samples/output/query1.csv<br>
+
+```
+samples/input/query1.sql: 
+SELECT  R.G, s.C, s2.A,b0.D, s2.B, b0.E, b0.F, b1.D, b1.E, b1.F,R.H FROM Reserves R,Sailors s,Sailors s2,Boats b0,Boats b1 WHERE R.H >= 102 and s.B=100 and s2.A = 6 and R.H < 104 and s.A = R.G and s2.A<s2.B and b1.D<103;
+```
+```
+samples/output/query1.csv
+3 105 6 101 300 2 3 101 2 3 102 
+3 105 6 101 300 2 3 102 3 4 102 
+3 105 6 102 300 3 4 101 2 3 102 
+3 105 6 102 300 3 4 102 3 4 102 
+3 105 6 104 300 104 2 101 2 3 102 
+3 105 6 104 300 104 2 102 3 4 102 
+3 105 6 103 300 1 1 101 2 3 102 
+3 105 6 103 300 1 1 102 3 4 102 
+3 105 6 107 300 2 8 101 2 3 102 
+3 105 6 107 300 2 8 102 3 4 102 
+```
+
 
 ## Reference
 https://github.com/JSQLParser/JSqlParser 
