@@ -1,0 +1,1 @@
+SELECT * FROM Sailors S1,Reserves R1,Sailors S2,Reserves R2

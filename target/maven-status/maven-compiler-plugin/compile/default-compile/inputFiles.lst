@@ -1,0 +1,12 @@
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\Operator.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\sqlProcess.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\SelectOperator.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\TableToAppropriateExpression.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\ProjectOperator.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\LightDB.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\JoinOperator.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\sqlParser.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\SimpleEvaluate.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\databaseCatalog.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\ScanOperator.java
+D:\ADBS\LightDB\src\main\java\ed\inf\adbs\lightdb\Tuple.java
