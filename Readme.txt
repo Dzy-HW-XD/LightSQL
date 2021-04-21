@@ -1,6 +1,10 @@
+# LightDB
+## Operator: Projection, Join, Selection, Scan and Aliases
+## Goal
 In this Project,I implement a lightweight database management system
 called LightDB without ORDER BY, DISTINCT operator.
 
+## Description
 In the following paragraphs, i will focus on explaining my logic for extracting 
 join conditions from the WHERE clause.
 
@@ -39,10 +43,14 @@ For example, SELECT * FROM Sailors S,Reserves R
 	                    AND S.B<R.H;
 Expression S.A = R.G and S.B<R.H will be labelled as Join Condition in this sql case.
 
+## Query Plan
 
-More Information:
+For example, if we have SELECT * FROM R, S, T WHERE R.A = 1 AND R.B = S.C
+AND T.G < 5 AND T.G = S.H, the above approach would give the following query plan:
 
-There are 11 Classes in this project, and they are:
+![image](https://github.com/Dzy-HW-XD/LightSQL/blob/main/query%20plan.png)
+
+## Classes Description:
 
 * databaseCatalog() is used to get Information of Database such as Path, Attribute information.
 * JoinOperator() is a child of Operator, which is used to accomplish cross product and conditional filter.
@@ -73,7 +81,9 @@ There are 11 Classes in this project, and they are:
 * Tuple() is a class that define tuple, one tuple is defined by one HashTable and One List.
 
 
-
+## Reference
+https://github.com/JSQLParser/JSqlParser 
+https://javadoc.io/doc/com.github.jsqlparser/jsqlparser/latest/index.html
 
 
 
