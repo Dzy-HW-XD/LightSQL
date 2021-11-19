@@ -1,3 +1,5 @@
+## 项目说明更新于2021.11.19: 基于Jsqlparser实现的类sql查询语句功能
+
 # LightSQL
 
 ## Operator: Projection, Join, Selection, Scan and Aliases
